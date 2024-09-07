@@ -22,7 +22,11 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   // CORS setup
-  app.enableCors();
+  app.enableCors(
+    {
+      origin: ['https://soslogic.com'],
+    },
+  );
 
   await app.listen(3000);
 }
